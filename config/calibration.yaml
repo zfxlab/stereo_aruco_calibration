@@ -1,0 +1,40 @@
+/**:
+  ros__parameters:
+    left.image_topic: /left_camera/image_raw
+    left.camera_info_topic: /left_camera/camera_info
+    right.image_topic: /right_camera/image_raw
+    right.camera_info_topic: /right_camera/camera_info
+
+    # OpenCV PREDEFINED_DICTIONARY_NAME: 8 = DICT_6X6_50.
+    board.dictionary_id: 8
+    # ID order: top-left, top-right, bottom-left, bottom-right.
+    board.marker_ids: [1, 2, 3, 4]
+    board.marker_length_m: 0.20
+    # Marker center-to-center distances.
+    board.center_spacing_x_m: 1.10
+    board.center_spacing_y_m: 0.70
+
+    sampling.auto_start: true
+    sampling.processing_rate_hz: 15.0
+    sampling.max_pair_delta_s: 0.02
+    sampling.queue_size: 5
+    sampling.minimum_common_markers: 3
+    sampling.minimum_samples: 10
+    sampling.maximum_samples: 40
+    sampling.maximum_reprojection_error_px: 1.0
+    sampling.minimum_pose_rotation_deg: 5.0
+    sampling.minimum_pose_translation_m: 0.08
+    # Accept one sample only after the detected corners remain stable across
+    # the entire window. A new window starts after the board visibly moves.
+    sampling.stability.minimum_duration_s: 0.4
+    sampling.stability.minimum_pairs: 6
+    sampling.stability.maximum_corner_motion_px: 1.0
+    sampling.stability.rearm_corner_motion_px: 8.0
+
+    display.preview_enabled: true
+    display.preview_rate_hz: 5.0
+    display.preview_scale: 0.5
+    display.jpeg_quality: 80
+    display.status_rate_hz: 5.0
+
+    output_path: /home/pnx/pnx/camera_calibration/data/stereo_extrinsics.yaml
